@@ -16,11 +16,12 @@ __version__ = "1.1"
 
 import math
 
-# import numpy as np
-# import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def practica_listas():
+
     # 1) Crear una lista que contenga los nùmeros del -10 al 10
 
     # La lista solicitada es una secuencia numérica ordenada, se puede
@@ -29,6 +30,8 @@ def practica_listas():
     lista1 = []  # Lista vacia
 
     # Crear una lista de rango -10 a 10 inclusive
+    for i in range(-10, 11):
+        lista1.append(i)
 
     print('1:', lista1)
 
@@ -39,6 +42,10 @@ def practica_listas():
     # Crear una lista de rango -10 a 10 inclusive de 
     # solo nùmeros pares
 
+    for i in range(-10, 11):
+        if (i % 2) == 0:
+            lista2.append(i)
+
     print('2:', lista2)
 
     # 3) De la lista1 filtrar los números positivos, es decir,
@@ -46,6 +53,10 @@ def practica_listas():
 
     lista3 = []  # Lista vacia
     # Filtrar numeros positivos
+
+    for numero in lista1:
+        if numero > 0:
+            lista3.append(numero)
 
     print('3:', lista3)
 
@@ -55,12 +66,19 @@ def practica_listas():
     lista4 = []  # Lista vacia
     # Filtrar numeros mayores a 3
 
+    for numeros in lista1:
+        if numeros > 3:
+            lista4.append(numeros)
+
     print('4:', lista4)
 
     # 5) De la lista1 realizar la suma de todos los números
 
     suma_total = 0
     # Sumar numeros
+
+    for numero in lista1:
+        suma_total += numero
 
     print('5:', suma_total)
 
@@ -70,6 +88,17 @@ def practica_listas():
     lista6 = []  # Lista vacia
     # Aplicar mdulo
 
+    for num in lista1:
+        if num < 0:
+            num = num * -1
+            lista6.append(num)
+        else:
+            lista6.append(num)
+    
+    #Manera simple
+    #for num in lista1:
+    #    lista6.append(abs(num))
+
     print('6:', lista6)
 
     # 7) Calcular la suma entre la lista 1 y la lista 6
@@ -78,6 +107,12 @@ def practica_listas():
 
     lista7 = []  # Lista vacia
     # Sumar listas
+    for i in range(len(lista1)): #hago esto pq son del mismo tamaño
+        num_lista_1 = lista1[i]
+        num_lista_6 = lista6[i]
+
+        suma = num_lista_1 + num_lista_6
+        lista7.append(suma)
 
     print('7:', lista1)
     print('7:', lista6)
@@ -88,22 +123,26 @@ def practica_listas():
     lista8 = []  # Lista vacia
     # Elevar al cuadrado
 
+    for i in lista1:
+        numero = i ** 2
+        lista8.append(numero)
+
     print('8:', lista8)
 
     # 9) Crear una lista "x" cuyo rango esté comprendido
     # entre 0 y 4pi, que tenga 40 elementos
     # Calcular la función seno de x
-    # x = np.linspace(0, 4*math.pi, 40)
+    x = np.linspace(0, 4*math.pi, 40)
 
-    # lista9 = []  # Lista vacia
-    # # Elevar al cuadrado
-    # for n in x:
-    #     lista9.append(math.sin(n))
+    lista9 = []  # Lista vacia
+    # Elevar al cuadrado
+    for n in x:
+        lista9.append(math.sin(n))
 
 
-    # plt.plot(x, lista9, c='darkblue')
-    # plt.grid(ls='dashed')
-    # plt.show()
+    plt.plot(x, lista9, c='darkblue')
+    plt.grid(ls='dashed')
+    plt.show()
 
 
 if __name__ == '__main__':
