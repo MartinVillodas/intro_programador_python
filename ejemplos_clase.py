@@ -139,7 +139,6 @@ def practica_listas():
     for n in x:
         lista9.append(math.sin(n))
 
-
     plt.plot(x, lista9, c='darkblue')
     plt.grid(ls='dashed')
     plt.show()

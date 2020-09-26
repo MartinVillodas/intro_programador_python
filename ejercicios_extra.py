@@ -26,6 +26,9 @@ def practica_listas():
 
     lista1 = []  # Lista vacia
 
+    for i in range(-5,6):
+        lista1.append(i)
+
     # Crear una lista de rango -5 a 5 inclusive
 
     print('1:', lista1)
@@ -36,6 +39,8 @@ def practica_listas():
     lista2 = []  # Lista vacia
     # Crear una lista de rango -5 a 5 inclusive de 
     # solo nùmeros impares
+    for i in range(-5,6,2):
+        lista2.append(i)
 
     print('2:', lista2)
 
@@ -44,6 +49,10 @@ def practica_listas():
 
     lista3 = []  # Lista vacia
     # Filtrar numeros negativos
+
+    for i in lista1:
+        if i < 0:
+            lista3.append(i)
 
 
     print('3:', lista3)
@@ -54,7 +63,7 @@ def practica_listas():
     lista4 = []  # Lista vacia
     # Filtrar numeros mayores a 2
     for n in lista1:
-        if n > 3:
+        if n > 2:
             lista4.append(n)
 
     print('4:', lista4)
@@ -63,6 +72,7 @@ def practica_listas():
 
     suma_total = 0
     # Sumar numeros
+    suma_total = sum(lista1)
 
     print('5:', suma_total)
 
@@ -71,6 +81,12 @@ def practica_listas():
 
     lista6 = []  # Lista vacia
     # Aplicar mdulo
+    for i in lista1:
+        if i < 0:
+            i = i * -1
+            lista6.append(i)
+        else:
+            lista6.append(i)
 
     print('6:', lista6)
 
@@ -80,6 +96,8 @@ def practica_listas():
 
     lista7 = []  # Lista vacia
     # Sumar listas
+    for i in len(lista1):
+        
 
     print('7:', lista1)
     print('7:', lista6)
